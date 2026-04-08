@@ -1,0 +1,5 @@
+2025-10-26
+- https://leetcode.com/problem-list/21lpb85m/
+- Completed TwoSum with ChatGPT explanation (https://leetcode.com/problem-list/21lpb85m/)
+- ChatGPT explained Time and Space Complexity, it refers to how much your solution adds. it has nothing to do
+  what is already present.
