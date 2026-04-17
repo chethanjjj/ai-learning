@@ -275,6 +275,71 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 
 ---
 
+## Area 6: AI Agents (Runs in parallel, Months 4–10)
+
+**Goal:** Learn to build, use, and orchestrate AI agents — both to accelerate your current DS work immediately and to be competitive for roles that increasingly list "AI agent experience" as a requirement.
+
+> This area runs alongside your other study areas, not after them. Start using agents in your daily work as soon as possible — the best way to learn is by doing real tasks faster.
+
+### Topic 1: Using AI Agents to Accelerate Your Work (Months 4–5)
+
+**Goal:** Before building agents, get fluent at *using* them. This has immediate ROI at your current job.
+
+- Theory: What is an AI agent vs. a chatbot? An agent can take actions — it uses tools, makes decisions, chains multiple steps together. A chatbot just responds. Understanding this distinction helps you know when to reach for an agent vs. a simple prompt.
+- Practice week 1: Use Claude, ChatGPT, or Cursor for your daily DS work. Start with: code generation (write boilerplate, unit tests, docstrings), data exploration (describe a dataset, suggest features), and debugging (paste an error, get an explanation). Track how much time you save.
+- Practice week 2: Use AI for more complex tasks — writing SQL queries, reviewing your own code, drafting documentation, summarizing papers or reports. Learn effective prompting: be specific, provide context, iterate on outputs.
+- Practice week 3: Use Claude Code or Cursor for end-to-end coding tasks in your F1 project. Give it a full task like "add a new feature engineering function that computes rolling averages" and observe how it plans and executes.
+
+**Resources:**
+- **Anthropic's prompt engineering guide** (docs.anthropic.com) — how to get the best results from LLMs
+- **Cursor** (cursor.com) — AI-powered IDE, great for daily DS coding
+- **Claude Code** — command line tool for agentic coding tasks
+
+### Topic 2: How AI Agents Work Under the Hood (Months 5–6)
+
+**Goal:** Understand the architecture so you can discuss it intelligently in interviews and make build-vs-buy decisions.
+
+- Theory week 1: The agent loop in plain English. An agent is just: (1) receive a goal, (2) decide what to do, (3) use a tool, (4) observe the result, (5) decide the next step, (6) repeat until done. That's it. Everything else is implementation details.
+- Theory week 2: Key components — LLM as the "brain," tool/function calling (how the LLM invokes external APIs or code), memory (how agents maintain context across steps), and planning (how agents break big tasks into subtasks).
+- Theory week 3: Agent architectures. Single agent vs. multi-agent. ReAct pattern (reason then act). Chain-of-thought prompting. When to use a simple prompt chain vs. a full agent framework.
+
+**Resources:**
+- **Anthropic's tool use documentation** — how function calling works
+- **LangChain/LangGraph conceptual docs** — read the architecture explanations, not the code tutorials yet
+- **Lilian Weng's "LLM Powered Autonomous Agents" blog post** — excellent technical overview
+- **Andrew Ng's AI Agentic Workflows talks** — accessible explanation of agent design patterns
+
+### Topic 3: Building AI Agents (Months 7–8)
+
+**Goal:** Build agents yourself. Start simple, add complexity.
+
+- Practice week 1: Build a simple tool-use agent. Give an LLM access to 2–3 tools (e.g., a calculator, a web search function, a database query function) and have it answer questions that require combining them. Use the Anthropic API or OpenAI function calling.
+- Practice week 2: Build a RAG (retrieval-augmented generation) pipeline for your F1 project. Store race data or commentary in a vector database, then build an agent that can answer natural language questions about race history by retrieving relevant context first.
+- Practice week 3: Build a multi-step data analysis agent. Give it access to your F1 dataset and have it: load data, explore it, generate hypotheses, run analyses, and summarize findings. This is directly relevant to "AI for DS" roles.
+- Practice week 4: Add error handling and evaluation. How do you know if your agent is working well? Build simple evaluations — does it answer correctly? Does it use the right tools? Does it recover from errors?
+
+**Resources:**
+- **Anthropic API docs** (docs.anthropic.com) — tool use and message API
+- **LangChain / LangGraph** — agent orchestration frameworks (use for learning, assess if you need them for production)
+- **ChromaDB or Pinecone** — vector databases for RAG
+- **Simon Willison's blog** — practical posts on building with LLMs
+
+### Topic 4: Agent Orchestration & Production Patterns (Months 9–10)
+
+**Goal:** Understand how agents work in production systems — this is what companies are actually hiring for.
+
+- Theory week 1: Orchestration patterns. Sequential chains (step A → step B → step C). Parallel execution (run multiple agents and combine results). Router patterns (decide which specialized agent handles a request). Human-in-the-loop (agent proposes, human approves).
+- Theory week 2: Production concerns. Cost management (tokens add up fast). Latency optimization (streaming, caching). Guardrails and safety (preventing harmful outputs, validating agent actions). Observability (logging every agent step for debugging).
+- Practice week 1: Add an orchestration layer to your F1 agent. Build a router that decides whether a user question needs data analysis, historical lookup, or prediction — and routes to different specialized chains.
+- Practice week 2: Add logging, cost tracking, and basic guardrails to your F1 agent. Deploy it as a simple API. This becomes a portfolio piece.
+
+**Resources:**
+- **LangSmith or Weights & Biases Traces** — agent observability and debugging
+- **Anthropic's production best practices** — cost management and safety patterns
+- **Chip Huyen's "Building LLM Applications for Production" post** — practical production considerations
+
+---
+
 ## Monthly Milestones
 
 | Month | Milestone |
@@ -282,13 +347,13 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 | 1 | **Theory foundation.** Understand decision trees and random forests conceptually. Can explain gradient boosting to a non-technical person. Probability/distributions theory done. Metrics thinking started. SQL routine established. |
 | 2 | **XGBoost deep dive.** Theory and practice complete for gradient boosting. Know the key hyperparameters and what they do. Hypothesis testing theory done. First product cases attempted. |
 | 3 | **Regularization + performance interpretation.** Can explain L1/L2 clearly. Can diagnose when metrics disagree (e.g., low R² with high Pearson) and explain what it means. A/B testing theory done. |
-| 4 | **Neural nets + transformers theory.** Can explain attention and how LLMs work at a conceptual level. Causal inference started. Product cases timed. SQL at interview speed. |
-| 5 | **LLMs in practice + DS integration.** Applied transformers/embeddings to F1 project. Causal inference applied. Full DS mock interview loop. Identify weak spots. |
-| 6 | **DS ready. MLE begins.** DS weak spots addressed. Start software engineering foundations. Refactor F1 project into clean, modular code with tests. |
-| 7 | **ML system design.** Can whiteboard an end-to-end ML system. Understand feature stores, serving patterns, and training-serving skew. Start Leetcode practice. |
-| 8 | **MLOps in practice.** F1 project Dockerized with experiment tracking. Understand model monitoring and drift detection. Leetcode mediums comfortable. |
-| 9 | **Full hybrid ready.** Can do a complete MLE mock interview loop (system design + coding + ML theory). Design a monitoring plan. Portfolio (F1 project) shows both DS depth and engineering quality. |
-| 10 | **Apply with confidence.** Both DS and MLE weak spots addressed. Start applying to top-choice companies. Can interview for DS, MLE, or hybrid roles depending on the opportunity. |
+| 4 | **Neural nets + transformers theory.** Can explain attention and how LLMs work at a conceptual level. Causal inference started. Product cases timed. SQL at interview speed. Start using AI agents daily at work. |
+| 5 | **LLMs in practice + DS integration.** Applied transformers/embeddings to F1 project. Causal inference applied. Full DS mock interview loop. Understand agent architecture conceptually. |
+| 6 | **DS ready. MLE begins.** DS weak spots addressed. Start software engineering foundations. Refactor F1 project into clean, modular code with tests. Can explain how agents work under the hood. |
+| 7 | **ML system design + agent building.** Can whiteboard an end-to-end ML system. Start Leetcode practice. Build first tool-use agent and RAG pipeline. |
+| 8 | **MLOps + agent practice.** F1 project Dockerized with experiment tracking. Multi-step data analysis agent built. Leetcode mediums comfortable. |
+| 9 | **Full hybrid ready.** Can do a complete MLE mock interview loop. Agent orchestration patterns understood. F1 agent deployed with logging. Portfolio shows DS depth, engineering quality, and AI agent skills. |
+| 10 | **Apply with confidence.** All weak spots addressed. Can interview for DS, MLE, or AI Engineer (application layer) roles. Portfolio includes F1 project with clean code, tests, Docker, experiment tracking, and a working AI agent. |
 
 ---
 
@@ -300,4 +365,5 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 4. **Use the F1 project as your lab.** Every ML and stats concept gets tested on real data you care about.
 5. **Track what you study.** Simple spreadsheet: date, topic, theory or practice, confidence (1–5). Review monthly.
 6. **One concept at a time.** Don't move to the next topic until you can explain the current one from scratch.
-7. **The F1 project is your portfolio piece.** By month 10 it should show clean code, tests, Docker, experiment tracking, and thoughtful ML — not just a notebook that runs.
+7. **The F1 project is your portfolio piece.** By month 10 it should show clean code, tests, Docker, experiment tracking, a working AI agent, and thoughtful ML — not just a notebook that runs.
+8. **Use agents at work immediately.** Don't wait until month 7 to start building. Start using AI tools in your daily DS work from month 4 — the time savings compound and the fluency shows in interviews.
