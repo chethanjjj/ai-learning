@@ -33,11 +33,24 @@ Don't skip to practice early. If you can't explain a concept simply to a non-tec
 
 > Tuesday = learn the concept. Saturday = practice it. Thursday = keep SQL sharp. Sunday = make it real in your F1 project.
 
+### Agents Are Your Study Partner from Day 1
+
+Agents are not a separate area you study later — they are woven into how you learn and practice every topic. From Week 1:
+
+- **Every theory session:** After learning a concept, use Claude to quiz you on it. Ask it to generate interview questions, explain things a different way, or poke holes in your understanding.
+- **Every practice session:** Use Cursor or Claude Code to write your notebook code faster. Let the agent scaffold boilerplate, then you fill in the logic and explanations. Use it to debug when stuck.
+- **Every SQL session:** Write the query yourself first, then paste it to Claude and ask "review this — what's wrong and what would you improve?" Build the habit of agent-assisted code review.
+- **Every F1 project session:** Use Claude Code for refactoring, generating test data, writing tests, or exploring your data with natural language questions.
+
+This dual-tracks your learning: you're mastering the DS/MLE content AND becoming fluent with AI agents at the same time. By month 3, using agents will feel natural. By month 5, you'll start building them. By month 8, you'll orchestrate them.
+
 ---
 
 ## Area 1: ML Fundamentals (~25% of time)
 
 **Goal:** Build clear, explainable understanding of core ML concepts — the kind where you could teach each one to someone new.
+
+**Agent integration:** After each topic, prompt Claude with "Give me 5 interview questions about [topic]" and answer them out loud. Use Claude Code to generate synthetic F1 datasets for your experiments. When writing notebooks, let the agent scaffold the code structure, but write all explanations yourself.
 
 ### Learning Sequence (theory → practice for each topic)
 
@@ -123,6 +136,8 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 
 **Goal:** Understand the "why" behind statistical methods before memorizing any formulas.
 
+**Agent integration:** Use Claude to generate practice scenarios ("give me an A/B test scenario with a twist"). When practicing hypothesis testing, have Claude check your reasoning — explain your p-value interpretation and ask it to find flaws. Use agents to generate synthetic data for causal inference exercises.
+
 ### Learning Sequence
 
 **Topic 1: Probability & Distributions (Weeks 1–3)**
@@ -154,6 +169,8 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 
 **Goal:** Learn to think like a DS who drives business decisions, not just one who builds models.
 
+**Agent integration:** Use Claude as a mock interviewer. Prompt it with "You're a VP of Product at Spotify. Ask me a metric diagnosis question and then critique my answer." Practice the back-and-forth of a real case interview. Use agents to research company blogs and summarize how real DS teams frame problems.
+
 ### Learning Sequence
 
 **Topic 1: Metrics Thinking (Weeks 1–4)**
@@ -184,6 +201,8 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 
 **Goal:** Maintain and sharpen. This is the one area where practice-heavy is fine since you already have the theory.
 
+**Agent integration:** Write every query yourself first — never let the agent write it for you. After you finish, paste your query into Claude and ask "review this SQL — is it correct, and how would you improve it?" This builds the code review muscle. Use agents to generate new SQL practice problems using your F1 tables when you run out of DataLemur questions.
+
 ### Learning Sequence
 
 **Weeks 1–4: SQL Foundations Refresh**
@@ -208,6 +227,8 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 ## Area 5: ML Engineering (Months 7–10)
 
 **Goal:** Build the engineering skills that let you take a model from notebook to production. This section starts after the DS foundation is solid — you're extending your range, not starting over.
+
+**Agent integration:** This is where agents shift from study partner to building material. Use Claude Code heavily for refactoring your F1 project, writing Dockerfiles, setting up CI/CD. By this phase, you've been using agents for 6 months and should be fluent — now you start building agents as part of your project portfolio.
 
 > During months 7–10, the weekly schedule shifts: Tuesday and Saturday sessions rotate between MLE topics below. Thursday stays as coding practice but shifts toward DSA problems. Sunday flex continues with F1 project, now focused on engineering improvements.
 
@@ -275,28 +296,28 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 
 ---
 
-## Area 6: AI Agents (Runs in parallel, Months 1–10)
+## Area 6: AI Agents — From User to Builder to Orchestrator
 
-**Goal:** Learn to build, use, and orchestrate AI agents — both to accelerate your current DS work and to be competitive for roles that increasingly require agent experience.
+**Goal:** Progress from fluent agent user → understanding how they work → building them → orchestrating production systems. This isn't a separate study area — it's layered into your entire journey.
 
-> You're already using agents in your daily work. This section formalizes that usage, builds understanding of how they work, and progresses to building and deploying your own.
+> **Months 1–2:** You USE agents as a study and work tool (baked into daily workflow above — no extra study time needed)
+> **Months 3–4:** You UNDERSTAND how agents work under the hood (theory sessions)
+> **Months 5–6:** You BUILD agents yourself (practice sessions)
+> **Months 7–8:** You ORCHESTRATE multi-agent production systems (advanced practice)
 
-### Topic 1: Leveling Up Your Agent Usage (Months 1–2, ongoing)
+### Phase 1: Use (Months 1–2) — No separate study time, just intentional usage
 
-**Goal:** You're already using agents — now get intentional about it. Push beyond basic prompting into advanced workflows.
+This is already happening through the agent integration notes in Areas 1–4 above. The goal is to go from "I use Claude sometimes" to "I have repeatable agent-assisted workflows for every type of task."
 
-- Month 1: Identify the 3–5 tasks you do most at work. For each, develop a repeatable prompting pattern. Track time saved. Examples: writing SQL queries, debugging pipeline errors, generating test data, drafting documentation, code reviews.
-- Month 2: Use Claude Code or Cursor for end-to-end coding tasks in your F1 project. Give it multi-step tasks like "refactor this notebook into modular functions with tests" and observe how it plans and executes. Learn to guide and correct the agent mid-task.
-- Ongoing: Every study topic in this plan, use an agent to help you learn faster — generate practice problems, explain concepts, review your code, create flashcards. The agent is your study partner.
+By end of Month 2 you should be able to:
+- Use agents to accelerate every study session (quizzing, code review, generating practice problems)
+- Use Claude Code or Cursor for multi-step coding tasks in your F1 project
+- Articulate which tasks agents are good at and which they're bad at — from experience, not theory
+- Have 3–5 repeatable prompting patterns you use at work daily
 
-**Resources:**
-- **Anthropic's prompt engineering guide** (docs.anthropic.com) — level up from basic prompting
-- **Cursor** (cursor.com) — AI-powered IDE for daily DS coding
-- **Claude Code** — command line tool for agentic coding tasks
+### Phase 2: Understand (Months 3–4)
 
-### Topic 2: How AI Agents Work Under the Hood (Months 3–4)
-
-**Goal:** Understand the architecture so you can discuss it in interviews and make build-vs-buy decisions.
+**Goal:** Know how agents work so you can discuss them in interviews and make build-vs-buy decisions.
 
 - Theory week 1: What is an AI agent vs. a chatbot? An agent takes actions — it uses tools, makes decisions, chains multiple steps. The agent loop: (1) receive a goal, (2) decide what to do, (3) use a tool, (4) observe the result, (5) decide next step, (6) repeat until done.
 - Theory week 2: Key components — LLM as the "brain," tool/function calling (how the LLM invokes external APIs or code), memory (how agents maintain context across steps), and planning (how agents break big tasks into subtasks).
@@ -309,7 +330,7 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 - **Lilian Weng's "LLM Powered Autonomous Agents" blog post** — excellent technical overview
 - **Andrew Ng's AI Agentic Workflows talks** — accessible explanation of agent design patterns
 
-### Topic 3: Building AI Agents (Months 5–6)
+### Phase 3: Build (Months 5–6)
 
 **Goal:** Build agents yourself. Start simple, add complexity.
 
@@ -324,7 +345,7 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 - **ChromaDB or Pinecone** — vector databases for RAG
 - **Simon Willison's blog** — practical posts on building with LLMs
 
-### Topic 4: Agent Orchestration & Production Patterns (Months 7–8)
+### Phase 4: Orchestrate (Months 7–8)
 
 **Goal:** Understand how agents work in production systems — this is what companies are actually hiring for.
 
@@ -344,16 +365,16 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 
 | Month | Milestone |
 |-------|-----------|
-| 1 | **Theory foundation.** Decision trees and random forests conceptually solid. Gradient boosting explainable to a non-technical person. Probability/distributions done. SQL routine established. Agent usage intentional — repeatable prompting patterns for top 3–5 work tasks. |
-| 2 | **XGBoost deep dive.** Gradient boosting theory and practice complete. Hypothesis testing theory done. First product cases attempted. Using Claude Code/Cursor for F1 project coding tasks. |
-| 3 | **Regularization + performance interpretation.** Can diagnose disagreeing metrics (low R² with high Pearson). A/B testing theory done. Can explain agent architecture — the agent loop, tool calling, memory, planning. |
-| 4 | **Neural nets + transformers theory.** Can explain attention and LLMs conceptually. Causal inference started. Product cases timed. SQL at interview speed. Can diagram your own agent workflows and explain what's happening under the hood. |
-| 5 | **LLMs in practice + agent building.** Applied embeddings to F1 project. Causal inference applied. Full DS mock interview loop. Built first tool-use agent and RAG pipeline. |
-| 6 | **DS ready. MLE begins.** DS weak spots addressed. Start software engineering foundations. Refactor F1 project. Multi-step data analysis agent built and evaluated. |
-| 7 | **ML system design + agent orchestration.** Can whiteboard an end-to-end ML system. Start Leetcode practice. Agent orchestration patterns understood — routing, parallel execution, human-in-the-loop. |
+| 1 | **Theory foundation + agent fluency.** Decision trees and random forests conceptually solid. Gradient boosting explainable to a non-technical person. Probability/distributions done. SQL routine established. Using agents in every study session — quizzing, code review, problem generation. Have 3+ repeatable agent workflows at work. |
+| 2 | **XGBoost deep dive.** Gradient boosting theory and practice complete. Hypothesis testing theory done. First product cases attempted. Using Claude Code/Cursor for F1 project coding. Can articulate what agents are good/bad at from personal experience. |
+| 3 | **Regularization + performance interpretation + agent theory.** Can diagnose disagreeing metrics (low R² with high Pearson). A/B testing theory done. Can explain the agent loop, tool calling, memory, and planning. Can diagram your own daily agent workflows. |
+| 4 | **Neural nets + transformers + agent architecture.** Can explain attention and LLMs conceptually. Causal inference started. Product cases timed. SQL at interview speed. Understand single vs. multi-agent, ReAct pattern, chain-of-thought. |
+| 5 | **LLMs in practice + first agents built.** Applied embeddings to F1 project. Causal inference applied. Full DS mock interview loop. Built first tool-use agent. RAG pipeline started. |
+| 6 | **DS ready. MLE begins. Data analysis agent built.** DS weak spots addressed. Start software engineering foundations. Refactor F1 project. Multi-step data analysis agent built and evaluated. |
+| 7 | **ML system design + agent orchestration.** Can whiteboard an end-to-end ML system. Start Leetcode practice. Orchestration patterns understood — routing, parallel execution, human-in-the-loop. |
 | 8 | **MLOps + agent production.** F1 project Dockerized with experiment tracking. F1 agent deployed with logging, cost tracking, and guardrails. Leetcode mediums comfortable. |
 | 9 | **Full hybrid ready.** Complete MLE mock interview loop. Portfolio shows DS depth, engineering quality, and a production-grade AI agent. |
-| 10 | **Apply with confidence.** Can interview for DS, MLE, or AI Engineer (application layer) roles. Portfolio: F1 project with clean code, tests, Docker, experiment tracking, and a working AI agent. |
+| 10 | **Apply with confidence.** Can interview for DS, MLE, or AI Engineer (application layer) roles. Portfolio: F1 project with clean code, tests, Docker, experiment tracking, and a working orchestrated AI agent. |
 
 ---
 
@@ -365,5 +386,5 @@ You don't need to build a transformer from scratch for DS roles. You need to und
 4. **Use the F1 project as your lab.** Every ML and stats concept gets tested on real data you care about.
 5. **Track what you study.** Simple spreadsheet: date, topic, theory or practice, confidence (1–5). Review monthly.
 6. **One concept at a time.** Don't move to the next topic until you can explain the current one from scratch.
-7. **The F1 project is your portfolio piece.** By month 10 it should show clean code, tests, Docker, experiment tracking, a working AI agent, and thoughtful ML — not just a notebook that runs.
-8. **Use agents at work from day one.** You're already doing this — now be intentional about it. Develop repeatable patterns, track time saved, and push into more complex agent tasks as you learn.
+7. **The F1 project is your portfolio piece.** By month 10 it should show clean code, tests, Docker, experiment tracking, a working orchestrated AI agent, and thoughtful ML — not just a notebook that runs.
+8. **Agents are your study partner, not a separate subject.** Use them in every session from day 1. Write the answer yourself first, then use the agent to review, quiz, and generate more practice. By month 5 you start building agents. By month 8 you're orchestrating them.
